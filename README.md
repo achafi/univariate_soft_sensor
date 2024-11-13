@@ -18,12 +18,17 @@ Welcome to the Test App! This application is Docker-based, providing a straightf
    - You should see the Docker version displayed, confirming it’s installed.
 
 #### 2. Clone the Repository
-   - Clone the provided repository to access the necessary folder structure and configuration files.
+   - Clone the provided repository to access the necessary folder structure and configuration files:
      ```bash
      git clone <repository_url>
      cd <repository_folder>
      ```
-   - This will create the folder structure for the application, including a `data` directory.
+   - This will set up the folder structure for the application, but please note that the `data` directory will not be included (as it is in `.gitignore`).
+   - **Create a `data` directory** inside the cloned repository:
+     ```bash
+     mkdir data
+     ```
+   - Next, unzip the `1st_test.zip` file you received by email, and place the extracted `1st_test` folder inside the newly created `data` directory. This step will ensure the application has access to the required data files.
 
 #### 3. Download the Docker Image
    - **Download the `univariate_soft_sensor.tar`** file sent via email. This file contains the entire app structure, configuration, and necessary dependencies.
