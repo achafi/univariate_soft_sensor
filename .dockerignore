@@ -1,0 +1,4 @@
+cache_folder
+*.pyc
+__pycache__/
+data

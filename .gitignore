@@ -1,0 +1,56 @@
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environment directories
+venv/
+env/
+
+# Ignore environment and configuration files
+*.env
+*.DS_Store
+
+# Ignore data folder and any subdirectories/files within it
+data/
+
+# Ignore Docker-related files and directories
+*.log
+docker-compose.override.yml
+*.pid
+*.tar
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore OS-specific files
+Thumbs.db
+.DS_Store
+
+# Ignore IDE/editor configuration files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore cache directories
+.cache/
+pip_cache/
+__pycache__/
+node_modules/
+*.mypy_cache/
+*.pytest_cache/
+*.hypothesis/
+*.ipynb_checkpoints/
+cache_folder
+# Ignore cache from package managers
+*.npm/
+*.pypoetry/
+*.venv/
+*.tox/
