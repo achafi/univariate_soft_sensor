@@ -1,7 +1,3 @@
-Here’s the updated README with instructions to clone the repository, add the data to the `data` folder, and run the Docker container.
-
----
-
 # Test App - Quick Start Guide
 
 Welcome to the Test App! This application is Docker-based, providing a straightforward setup process. Along with this README, you should have received a pre-built Docker image (`univariate_soft_sensor.tar`) and sample data.
