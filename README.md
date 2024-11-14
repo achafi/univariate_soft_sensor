@@ -4,6 +4,7 @@ Welcome to the Test App! This application is Docker-based, providing a straightf
 
 ## Prerequisites
 - **Docker** must be installed. If Docker isn’t installed on your machine, follow the steps below to install it.
+- **Git** must be installed to clone the repository. If Git isn’t installed on your machine, follow the steps below to install it.
 
 ---
 
@@ -17,7 +18,15 @@ Welcome to the Test App! This application is Docker-based, providing a straightf
      ```
    - You should see the Docker version displayed, confirming it’s installed.
 
-#### 2. Clone the Repository
+#### 2. Install Git
+   - **Download Git**: Visit [Git’s official website](https://git-scm.com/) to download and install Git for your operating system.
+   - **Verify Installation**: Open a terminal and run:
+     ```bash
+     git --version
+     ```
+   - You should see the Git version displayed, confirming it’s installed.
+
+#### 3. Clone the Repository
    - Clone the provided repository to access the necessary folder structure and configuration files:
      ```bash
      git clone <repository_url>
@@ -29,19 +38,7 @@ Welcome to the Test App! This application is Docker-based, providing a straightf
      mkdir data
      ```
    - Next, unzip the `1st_test.zip` file you received by email, and place the extracted `1st_test` folder inside the newly created `data` directory. This step will ensure the application has access to the required data files.
-
-#### 3. Download the Docker Image
-   - **Download the `univariate_soft_sensor.tar`** file sent via email. This file contains the entire app structure, configuration, and necessary dependencies.
-
-#### 4. Load the Docker Image
-   - **Load the image** into Docker by running the following command in your terminal:
-     ```bash
-     docker load -i /path/to/your/univariate_soft_sensor.tar
-     ```
-   - After loading, you’ll see a confirmation that the image was successfully imported.
-
-#### 5. Add the Data File
-   - Copy the data file you received into the `data` folder within the cloned repository directory. The folder structure should look like this:
+   The folder structure should look like this:
      ```
      univariate_soft_sensor/
      ├── data/
@@ -51,14 +48,24 @@ Welcome to the Test App! This application is Docker-based, providing a straightf
      └── other_app_files...
      ```
 
+#### 4. Download the Docker Image
+   - **Download the `univariate_soft_sensor.tar`** file sent via email. This file contains the entire app structure, configuration, and necessary dependencies.
+
+#### 5. Load the Docker Image
+   - **Load the image** into Docker by running the following command in your terminal:
+     ```bash
+     docker load -i /path/to/your/univariate_soft_sensor.tar
+     ```
+   - After loading, you’ll see a confirmation that the image was successfully imported.
+
 #### 6. Run the Docker Container
    - To start the application, use the following command:
      ```bash
-     docker run -p 8050:8050 -v "$(pwd)/data/1st_test:/univariate_soft_sensor/data/1st_test" univariate_soft_sensor
+     docker run -p 8050:8050 -v "$(pwd):/univariate_soft_sensor" univariate_soft_sensor
      ```
    - This command:
      - Maps port `8050` on your local machine to the app’s port `8050`.
-     - Mounts your `data` folder to the `/univariate_soft_sensor/data/1st_test` directory in the container, so the app can access your data file.
+     - Mounts the entire local repository to the `/univariate_soft_sensor` directory inside the container. This includes the `data` folder, so the app can access your data file.
 
 ---
 
@@ -75,6 +82,6 @@ If everything is set up correctly, the app will display a simple Dash page confi
 
 ### Troubleshooting
 - **Docker issues**: Refer to [Docker’s Troubleshooting Guide](https://docs.docker.com/config/daemon/).
-- **Data file access**: Make sure the data file is in the correct directory and you’ve mounted it correctly using `-v "$(pwd)/data/1st_test:/univariate_soft_sensor/data/1st_test"`.
+- **Data file access**: Make sure the data file is in the correct directory and you’ve mounted it correctly using `-v "$(pwd):/univariate_soft_sensor"`.
 
 This setup should help you get started smoothly and verify that Docker and the app are working as expected.
